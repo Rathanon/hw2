@@ -19,7 +19,7 @@ public class Tiger extends Animal {
     // number of steps a fox can go before it has to eat again.
     private static final int RABBIT_FOOD_VALUE = 9;
     //
-    private static final int FOX_FOOD_VALUE = 6;
+    private static final int FOX_FOOD_VALUE = 3;
     // Random generator
     private static final Random RANDOM = new Random();
 
