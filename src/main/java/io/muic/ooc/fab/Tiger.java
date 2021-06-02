@@ -18,6 +18,8 @@ public class Tiger extends Animal {
     // The food value of a single rabbit. In effect, this is the
     // number of steps a fox can go before it has to eat again.
     private static final int RABBIT_FOOD_VALUE = 9;
+    //
+    private static final int FOX_FOOD_VALUE = 6;
     // Random generator
     private static final Random RANDOM = new Random();
 
@@ -50,7 +52,7 @@ public class Tiger extends Animal {
      * This is what the fox does most of the time: it hunts for rabbits. In the
      * process, it might breed, die of hunger, or die of old age.
      *
-     * @param field The field currently occupied.
+     * @param //field The field currently occupied.
      * @param animals A list to return newly born foxes.
      */
     @Override
@@ -102,6 +104,13 @@ public class Tiger extends Animal {
                 if (rabbit.isAlive()) {
                     rabbit.setDead();
                     foodLevel = RABBIT_FOOD_VALUE;
+                    return where;
+                }
+            }else if(animal instanceof Fox){
+                Fox fox = (Fox) animal;
+                if(fox.isAlive()){
+                    fox.setDead();
+                    foodLevel = FOX_FOOD_VALUE;
                     return where;
                 }
             }
